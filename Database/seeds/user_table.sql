@@ -9,3 +9,8 @@ INSERT INTO USER (name, email, user_type) VALUES
 ('Lucy Kamau', 'lkamau@gmail.com', 'Subscriber'),
 ('Victor Otieno', 'votieno@gmail.com', 'Subscriber'),
 ('Faith Nduta', 'fnduta@gmail.com', 'Guest');
+('Raphael Omondi', 'romondi@gmail.com', 'Subscriber');
+('Mary Wambui', 'mwambui@gmail.com', 'Subscriber');
+('Joshua Sambuli', 'jsambuli@gmail.com', 'Guest');
+('Mercy Wanjiru', 'mwanjiru@gmail.com', 'Subscriber');
+('Adam Savimbi', 'asavimbi@gmail.com', 'Subscriber');
