@@ -36,8 +36,8 @@ CREATE TABLE PROJECT_UPDATE (
     status VARCHAR(50),
     description TEXT,
     type INT CHECK (type IN (1, 2, 3)),
-    FOREIGN KEY (project_id) REFERENCES PROJECT(project_id) ON DELETE CASCADE,
-    FOREIGN KEY (developer_id) REFERENCES DEVELOPER(user_id)
+    FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE,
+    FOREIGN KEY (developer_id) REFERENCES SUBSCRIBER(user_id)
 );
 
 -- Manages which projects require other projects
@@ -45,8 +45,8 @@ CREATE TABLE PROJECT_DEPENDENCY (
     project_id INT,
     depends_on_project_id INT,
     PRIMARY KEY (project_id, depends_on_project_id),
-    FOREIGN KEY (project_id) REFERENCES PROJECT(project_id) ON DELETE CASCADE,
-    FOREIGN KEY (depends_on_project_id) REFERENCES PROJECT(project_id) ON DELETE CASCADE
+    FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE,
+    FOREIGN KEY (depends_on_project_id) REFERENCES PROJECT(id) ON DELETE CASCADE
 );
 
 -- Weak entity dependent on the Project
@@ -57,7 +57,7 @@ CREATE TABLE BUG_REPORT (
     description TEXT,
     file_date DATE,
     PRIMARY KEY (project_id, bug_id),
-    FOREIGN KEY (project_id) REFERENCES PROJECT(project_id) ON DELETE CASCADE,
+    FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE,
     FOREIGN KEY (subscriber_id) REFERENCES SUBSCRIBER(user_id)
 );
 
@@ -68,7 +68,7 @@ CREATE TABLE DOWNLOAD_RECORD (
     download_count INT DEFAULT 0,
     PRIMARY KEY (user_id, project_id),
     FOREIGN KEY (user_id) REFERENCES USER(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (project_id) REFERENCES PROJECT(project_id) ON DELETE CASCADE
+    FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE
 );
 
 -- Weak entity linking uploads to projects and optionally to updates
@@ -78,6 +78,6 @@ CREATE TABLE TRANSACTION (
     update_id INT NULL,
     transaction_date DATE,
     PRIMARY KEY (project_id, transaction_id),
-    FOREIGN KEY (project_id) REFERENCES PROJECT(project_id) ON DELETE CASCADE,
+    FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE,
     FOREIGN KEY (update_id) REFERENCES PROJECT_UPDATE(update_id) ON DELETE SET NULL
 );
