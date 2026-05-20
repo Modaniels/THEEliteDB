@@ -1,8 +1,8 @@
-CREATE TABLE USER (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE "USER" (
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
-    user_type ENUM('Guest', 'Subscriber') NOT NULL 
+    user_type VARCHAR(50) CHECK (user_type IN ('Guest', 'Subscriber')) NOT NULL 
 );
 
 CREATE TABLE SUBSCRIBER (
@@ -10,11 +10,11 @@ CREATE TABLE SUBSCRIBER (
     password VARCHAR(255) NOT NULL,
     subscription_date DATE NOT NULL,
     is_developer BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (user_id) REFERENCES USER(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES "USER"(id) ON DELETE CASCADE
 );
 
 CREATE TABLE PROJECT (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     status VARCHAR(50) NOT NULL,
     description TEXT,
     developer_id INT NOT NULL, 
@@ -23,13 +23,13 @@ CREATE TABLE PROJECT (
 
 CREATE TABLE PROJECT_CATEGORY (
     project_id INT,
-    category ENUM('A', 'B', 'C', 'D'), 
+    category VARCHAR(50) CHECK (category IN ('A', 'B', 'C', 'D')), 
     PRIMARY KEY (project_id, category),
     FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE
 );
 
 CREATE TABLE PROJECT_UPDATE (
-    update_id INT PRIMARY KEY AUTO_INCREMENT,
+    update_id SERIAL PRIMARY KEY,
     project_id INT NOT NULL,
     developer_id INT NOT NULL,
     name VARCHAR(255),
@@ -68,7 +68,7 @@ CREATE TABLE DOWNLOAD_RECORD (
     download_count INT DEFAULT 0,
     PRIMARY KEY (user_id, project_id),
     FOREIGN KEY (user_id) REFERENCES USER(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE
+    FOREIGN KEY (project_id) REFERENCES PROJECT(project_id) ON DELETE CASCADE
 );
 
 -- Weak entity linking uploads to projects and optionally to updates
