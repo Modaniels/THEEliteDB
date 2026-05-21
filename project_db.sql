@@ -1,4 +1,4 @@
--- PROJECT
+
 
 INSERT INTO PROJECT (status, description, developer_id) VALUES
   ('Active',    'A mobile app for tracking personal fitness goals and workouts.', 1),
@@ -11,7 +11,7 @@ INSERT INTO PROJECT (status, description, developer_id) VALUES
   ('Pending',   'A data analytics pipeline for processing large CSV datasets.', 16),
   ('Archived',  'A legacy data migration script for moving records from MySQL to PostgreSQL.', 1);
 
--- PROJECT_CATEGORY
+
 INSERT INTO PROJECT_CATEGORY (project_id, category) VALUES
   (1, 'A'),
   (1, 'C'),
@@ -29,7 +29,7 @@ INSERT INTO PROJECT_CATEGORY (project_id, category) VALUES
   (8, 'D'),
   (9, 'D');
 
--- PROJECT_UPDATE
+
 INSERT INTO PROJECT_UPDATE (update_id, project_id, developer_id, name, status, description, type) VALUES
   (1, 1, 1,  'v1.0 Initial Release',      'Published', 'First public release with core workout tracking features.',               1),
   (2, 1, 1,  'v1.1 Bug Fix',              'Published', 'Fixed crash on iOS when logging more than 10 exercises.',                 2),
