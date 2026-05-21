@@ -31,7 +31,6 @@ CREATE TABLE PROJECT_CATEGORY (
 CREATE TABLE PROJECT_UPDATE (
     update_id SERIAL PRIMARY KEY,
     project_id INT NOT NULL,
-    developer_id INT NOT NULL,
     name VARCHAR(255),
     status VARCHAR(50),
     description TEXT,
