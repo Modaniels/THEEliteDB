@@ -31,6 +31,7 @@ CREATE TABLE PROJECT_CATEGORY (
 CREATE TABLE PROJECT_UPDATE (
     update_id SERIAL PRIMARY KEY,
     project_id INT NOT NULL,
+    developer_id INT NOT NULL,
     name VARCHAR(255),
     status VARCHAR(50),
     description TEXT,
@@ -66,8 +67,8 @@ CREATE TABLE DOWNLOAD_RECORD (
     project_id INT,
     download_count INT DEFAULT 0,
     PRIMARY KEY (user_id, project_id),
-    FOREIGN KEY (user_id) REFERENCES USER(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES "USER"(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES "USER"(id) ON DELETE CASCADE,
+    FOREIGN KEY (project_id) REFERENCES PROJECT(id) ON DELETE CASCADE
 );
 
 -- Weak entity linking uploads to projects and optionally to updates

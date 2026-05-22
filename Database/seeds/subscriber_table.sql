@@ -8,7 +8,7 @@ INSERT INTO SUBSCRIBER (user_id, password, subscription_date, is_developer) VALU
 (5, 'hash_pass_789', '2026-03-10', FALSE),
 (6, 'hash_pass_abc', '2026-04-05', TRUE),
 (8, 'hash_pass_def', '2026-05-01', FALSE),
-(9, 'hash_pass_ghi', '2026-05-18', FALSE);
+(9, 'hash_pass_ghi', '2026-05-18', FALSE),
 (11, 'hash_pass_jkl', '2026-06-01', FALSE),
 (12, 'hash_pass_mno', '2026-06-05', TRUE),
 (13, 'hash_pass_pqr', '2026-06-10', TRUE),

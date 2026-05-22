@@ -4,7 +4,7 @@
 
 # replace with your local database credentials
 DB_USER="postgres" 
-DB_PASS=" "
+DB_PASS="1234"
 DB_NAME="THEELITEDB"
 
 

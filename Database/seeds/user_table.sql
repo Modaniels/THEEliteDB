@@ -1,4 +1,4 @@
-INSERT INTO USER (name, email, user_type) VALUES
+INSERT INTO "USER" (name, email, user_type) VALUES
 ('James Omondi', 'jomondi@gmail.com', 'Subscriber'),
 ('Sarah Wanjiku', 'swanjiku@gmail.com', 'Guest'),
 ('Brian Mutua', 'bmutua@gmail.com', 'Subscriber'),
@@ -8,9 +8,10 @@ INSERT INTO USER (name, email, user_type) VALUES
 ('Peter Mwangi', 'pmwangi@gmail.com', 'Guest'),
 ('Lucy Kamau', 'lkamau@gmail.com', 'Subscriber'),
 ('Victor Otieno', 'votieno@gmail.com', 'Subscriber'),
-('Faith Nduta', 'fnduta@gmail.com', 'Guest');
-('Raphael Omondi', 'romondi@gmail.com', 'Subscriber');
-('Mary Wambui', 'mwambui@gmail.com', 'Subscriber');
-('Joshua Sambuli', 'jsambuli@gmail.com', 'Guest');
-('Mercy Wanjiru', 'mwanjiru@gmail.com', 'Subscriber');
-('Adam Savimbi', 'asavimbi@gmail.com', 'Subscriber');
+('Faith Nduta', 'fnduta@gmail.com', 'Guest'),
+('Raphael Omondi', 'romondi@gmail.com', 'Subscriber'),
+('Mary Wambui', 'mwambui@gmail.com', 'Subscriber'),
+('Joshua Sambuli', 'jsambuli@gmail.com', 'Guest'),
+('Mercy Wanjiru', 'mwanjiru@gmail.com', 'Subscriber'),
+('Adam Savimbi', 'asavimbi@gmail.com', 'Subscriber'),
+('Kevin Ochieng', 'kochieng@gmail.com', 'Subscriber');
